@@ -1,0 +1,108 @@
+.profile-page { max-width: 900px; }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* AVATAR */
+.profile-avatar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.avatar-circle {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--pink-soft);
+  cursor: pointer;
+  overflow: hidden;
+  border: 3px solid var(--pink);
+  flex-shrink: 0;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(233, 30, 140, 0.65);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.avatar-circle:hover .avatar-overlay { opacity: 1; }
+
+.avatar-name { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+.avatar-email { font-size: 0.82rem; color: var(--text-muted); }
+.avatar-hint { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin-top: 4px; }
+.avatar-hint-mobile { display: none; }
+
+/* FORMS */
+.profile-forms { display: flex; flex-direction: column; gap: 16px; }
+
+.profile-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .profile-grid { grid-template-columns: 1fr; }
+
+  .profile-avatar-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 6px;
+  }
+
+  .avatar-circle { width: 80px; height: 80px; }
+  .avatar-initials { font-size: 1.6rem; }
+  .avatar-hint { display: none; }
+  .avatar-hint-mobile { display: block; font-size: 0.75rem; color: var(--text-muted); }
+
+  .profile-row { grid-template-columns: 1fr; }
+}

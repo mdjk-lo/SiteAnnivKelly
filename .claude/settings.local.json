@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"require\\('./db'\\).execute\\('SHOW COLUMNS FROM users'\\).then\\(\\([r]\\)=>r.forEach\\(c=>console.log\\(c.Field\\)\\)\\).catch\\(e=>console.log\\(e.message\\)\\)\")"
+    ]
+  }
+}
